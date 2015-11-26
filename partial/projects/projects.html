@@ -2,7 +2,7 @@
 
 	<h1>My projects</h1>
 
-	<table class="table table-striped">
+	<table class="table">
 		<thead>
 			<tr>
 				<th>Title</th>
@@ -11,9 +11,10 @@
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr ng-repeat="project in projects">
-				<td>
+		<tbody ng-model="projects" as-sortable>
+			<tr as-sortable-item ng-repeat="project in projects" 
+			ng-class="{'green-row':project.isPublished}">
+				<td as-sortable-item-handle>
 					{{project.title}}
 				</td>
 				<td>
@@ -25,7 +26,8 @@
 				<td>
 					<div class="btn btn-xs btn-primary" ng-click="editProject(project)">Edit</div>
 					<div class="btn btn-xs btn-danger" ng-click="removeProject(project._id)">Remove</div>
-					<div class="btn btn-xs btn-success">Publish</div>
+					<div class="btn btn-xs btn-success" ng-if="!project.isPublished" ng-click="publishProject(project)">Publish</div>
+					<div class="btn btn-xs btn-warning" ng-if="project.isPublished" ng-click="unpublishProject(project)">Unpublish</div>
 				</td>
 			</tr>
 		</tbody>

@@ -1,4 +1,11 @@
-angular.module('angularRevision', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
+angular.module('angularRevision', 
+    [
+    'ui.bootstrap',
+    'ui.utils',
+    'ui.router',
+    'ngAnimate',
+    'as.sortable'
+    ]);
 
 angular.module('angularRevision').config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 

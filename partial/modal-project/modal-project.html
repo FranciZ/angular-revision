@@ -4,12 +4,12 @@
         <h3 class="modal-title">Edit project</h3>
 </div>
 <div class="modal-body">
-    <ul>
-        <li ng-repeat="item in items">
-            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-        </li>
-    </ul>
-    Selected: <b>{{ selected.item }}</b>
+    
+    <label>Project title</label>
+    <input class="form-control" type="text" ng-model="project.title" />
+    <label>Project Description</label>
+    <textarea class="form-control" ng-model="project.description"></textarea>
+
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
