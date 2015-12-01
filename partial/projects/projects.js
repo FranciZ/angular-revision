@@ -14,10 +14,10 @@ angular.module('angularRevision')
 	      size: 'lg',
 	      resolve: {
 	        project: function () {
-	          	return project;
+                return project;
 	        },
 	        test:function(){
-        		return 'myTest';
+                return 'myTest';
 	        }
 	      }
 	    });
@@ -25,7 +25,7 @@ angular.module('angularRevision')
 	};
 
 	$scope.dragControlListeners = {
-	    accept: function (sourceItemHandleScope, destSortableScope) {return boolean},
+	    accept: function (sourceItemHandleScope, destSortableScope) {return true;},
 	    itemMoved: function (event) {},
 	    orderChanged: function(event) {},
 	    containment: '#board',
