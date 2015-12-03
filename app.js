@@ -18,7 +18,8 @@ angular.module('angularRevision').config(function($stateProvider, $urlRouterProv
     });
     $stateProvider.state('posts', {
         url: '/posts',
-        templateUrl: 'partial/posts/posts.html'
+        templateUrl: 'partial/posts/posts.html',
+        controller:'PostsCtrl'
     });
     $stateProvider.state('about', {
         url: '/about',

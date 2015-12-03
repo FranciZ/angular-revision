@@ -2,7 +2,7 @@ angular.module('angularRevision').factory('ProjectService',function() {
 
 	var project = {
 		model:{
-			list:[
+			list : [
 				{
 					_id:'09jdsa90j23dioka09sdk1',
 					category:'Web Development',
@@ -31,7 +31,8 @@ angular.module('angularRevision').factory('ProjectService',function() {
 					image:'http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg'
 				}
 
-			]
+			],
+            item : null
 		},
 		removeProject:function(projectId){
 

@@ -11,10 +11,12 @@
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<tbody ng-model="projects" as-sortable>
-			<tr as-sortable-item ng-repeat="project in projects" 
-			ng-class="{'green-row':project.isPublished}">
-				<td as-sortable-item-handle>
+        <!-- ng-model="projects" as-sortable -->
+		<tbody>
+            <!-- as-sortable-item  -->
+			<tr ng-repeat="project in projects" ng-class="{'green-row':project.isPublished}">
+                <!--  as-sortable-item-handle -->
+				<td>
 					{{project.title}}
 				</td>
 				<td>
