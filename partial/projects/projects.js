@@ -1,7 +1,7 @@
 /* globals confirm */
 
 angular.module('angularRevision')
-.controller('ProjectsCtrl',function($scope, $modal, ProjectService){
+.controller('ProjectsCtrl',function($scope, $modal, projects, ProjectService){
 
 	$scope.projects = ProjectService.model.list;
 
@@ -34,13 +34,32 @@ angular.module('angularRevision')
 	};
 
 
+    $scope.createProject = function(){
+      
+        var modalInstance = $modal.open({
+	      animation: true,
+	      templateUrl: 'partial/modal-project/modal-project.html',
+	      controller: 'ModalProjectCtrl',
+	      size: 'lg',
+	      resolve: {
+	        project: function () {
+                return null;
+	        },
+	        test:function(){
+                return 'myTest';
+	        }
+	      }
+	    });
+        
+    };
+    
 	$scope.removeProject = function(projectId){
 
 		var c = confirm('Are you sure you want to delete this project');
 
 		if(c){
 
-			ProjectService.removeProject(projectId);
+			ProjectService.deleteProject(projectId);
 
 		}
 

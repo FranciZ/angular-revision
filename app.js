@@ -14,7 +14,14 @@ angular.module('angularRevision').config(function($stateProvider, $urlRouterProv
     $stateProvider.state('projects', {
         url: '/projects',
         templateUrl: 'partial/projects/projects.html',
-        controller:'ProjectsCtrl'
+        controller:'ProjectsCtrl',
+        resolve:{
+            projects:function(ProjectService){
+                
+                return ProjectService.getProjects();
+                
+            }
+        }
     });
     $stateProvider.state('posts', {
         url: '/posts',
