@@ -15,13 +15,9 @@ angular.module('angularRevision')
 	      resolve: {
 	        project: function () {
                 return project;
-	        },
-	        test:function(){
-                return 'myTest';
 	        }
 	      }
 	    });
-
 	};
 
 	$scope.dragControlListeners = {
@@ -44,9 +40,6 @@ angular.module('angularRevision')
 	      resolve: {
 	        project: function () {
                 return null;
-	        },
-	        test:function(){
-                return 'myTest';
 	        }
 	      }
 	    });
@@ -58,9 +51,7 @@ angular.module('angularRevision')
 		var c = confirm('Are you sure you want to delete this project');
 
 		if(c){
-
 			ProjectService.deleteProject(projectId);
-
 		}
 
 	};

@@ -26,7 +26,14 @@ angular.module('angularRevision').config(function($stateProvider, $urlRouterProv
     $stateProvider.state('posts', {
         url: '/posts',
         templateUrl: 'partial/posts/posts.html',
-        controller:'PostsCtrl'
+        controller:'PostsCtrl',
+        resolve:{
+            posts:function(PostsService){
+                
+                return PostsService.getPosts();
+                
+            }
+        }
     });
     $stateProvider.state('about', {
         url: '/about',

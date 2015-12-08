@@ -1,31 +1,36 @@
-angular.module('angularRevision').factory('PostsService',function() {
+angular.module('angularRevision').factory('PostsService', function($http) {
 
 	var posts = {
+        apiUrl:'http://localhost:3000',
         model:{
-            list:[
-                {
-                    id:'asdadhas90d093elkajsd0912',
-                    title:'This is my first post',
-                    content:'This is my post content',
-                    author:'Author 1',
-                    dateTime:Date.now()-1000
-                },
-                {
-                    id:'asdadhas90d093elkajsd0913',
-                    title:'This is my second post',
-                    content:'This is my second post content',
-                    author:'Author 2',
-                    dateTime:Date.now()-2000
-                },
-                {
-                    id:'asdadhas90d093elkajsd0914',
-                    title:'This is my first post',
-                    content:'This is my third post content',
-                    author:'Author 3',
-                    dateTime:Date.now()-3000
-                }
-            ],
+            list:[],
             item:{}
+        },
+        getPosts:function(){
+          
+            var promise = $http.get(posts.apiUrl+'/api/post');
+            
+            promise.success(function(res){
+                
+                posts.model.list = res;
+                
+            });
+            
+            return promise;
+            
+        },
+        createPost:function(postData){
+          
+            var promise = $http.post(posts.apiUrl+'/api/post', postData);
+            
+            promise.success(function(res){
+               
+                posts.model.list.push(res);
+                
+            });
+            
+            return promise;
+            
         },
         removeItem:function(_id){
             

@@ -1,6 +1,6 @@
 angular.module('angularRevision')
-.controller('ModalProjectCtrl',function($scope, $modalInstance, ProjectService, project, test){
-
+.controller('ModalProjectCtrl',function($scope, $modalInstance, ProjectService, project){
+    
     var newProject = false;
     
     if(project === null){
@@ -37,3 +37,15 @@ angular.module('angularRevision')
 	};
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
